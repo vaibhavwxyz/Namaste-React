@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { mealsData } from "../config";
 
-const Search = () => {
-  const [meals, setMeals] = useState("hello");
-  const [searchText, setSearchText] = useState("");
+function handelSearch(searchText, meals) {
+  const filterData = Object.values(meals).filter((meal) =>
+    meal.strMeal.includes(searchText)
+  );
+  // console.log(filterData);
+  return filterData;
+}
 
-  const handelSearch = function (searchText, meals) {
-    e.prevent.default();
-    console.log(meals);
-    // const filterData = meals.filter((meal) => {
-    //   meal.strMeal.includes(searchText);
-    // });
-    // console.log(filterData);
-    // return filterData;
-  };
+const Search = () => {
+  const [meals, setMeals] = useState(mealsData);
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div class="flex w-full max-w-sm items-center space-x-2 my-5">
@@ -27,7 +25,10 @@ const Search = () => {
       />
       <button
         class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-1 bg-indigo-600 focus:ring-indigo-400 focus:ring-offset-1 dark:hover:bg-indigo-700 dark:hover:text-gray-100 disabled:opacity-50 dark:focus:ring-indigo-400 disabled:pointer-events-none dark:focus:ring-offset-gray-900 dark:bg-indigo-600 text-white hover:bg-indigo-700 h-10 py-2 px-4"
-        onClick={handelSearch}
+        onClick={() => {
+          const data = handelSearch(searchText, meals);
+          setMeals(data);
+        }}
       >
         Search
       </button>

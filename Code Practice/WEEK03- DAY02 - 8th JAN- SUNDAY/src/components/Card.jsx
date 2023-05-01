@@ -1,5 +1,5 @@
 const Cards = ({ cardData }) => {
-  console.log(cardData);
+  // console.log(cardData);
   const { strMealThumb: image, strMeal, strArea } = cardData;
   return (
     <div className=" shadow-lg rounded-md p-2">
