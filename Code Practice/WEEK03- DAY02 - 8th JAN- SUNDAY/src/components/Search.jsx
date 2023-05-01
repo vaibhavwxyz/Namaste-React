@@ -13,6 +13,12 @@ const Search = () => {
   const [meals, setMeals] = useState(mealsData);
   const [searchText, setSearchText] = useState("");
 
+  const result = Array.isArray(meals);
+
+  console.log(result);
+  console.log(meals);
+  console.log(result);
+
   return (
     <div class="flex w-full max-w-sm items-center space-x-2 my-5">
       <input
