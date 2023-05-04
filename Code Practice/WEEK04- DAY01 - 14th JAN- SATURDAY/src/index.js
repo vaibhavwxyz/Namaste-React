@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Nav from "./components/Navbar";
-import Cards from "./components/Card";
 import { mealsData } from "./config";
-import Search from "./components/Search";
 import { useState } from "react";
+import Nav from "./components/Navbar";
+import Search from "./components/Search";
+import Cards from "./components/Card";
 
 const App = () => {
   const [meals, setMeals] = useState(mealsData);
