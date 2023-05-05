@@ -6,8 +6,7 @@ const Search = ({ meals, setMeals }) => {
 
   function handelSearch(searchText, meals) {
     if (searchText.length === 0) {
-      setMeals(...mealsData);
-      console.log(mealsData);
+      setMeals(mealsData);
     }
     const filterData = meals.filter((meal) =>
       meal.strMeal.toLowerCase().includes(searchText)
