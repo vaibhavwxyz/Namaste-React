@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -11,16 +12,16 @@ const Nav = () => {
       />
       <ul className="hidden sm:flex gap-5">
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
-          Home
+          <Link to={"/"}>Home</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
           Menu
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
-          About us
+          <Link to={"/about"}>About us</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
-          Contact us
+          <Link to={"/contact"}>Contact us</Link>
         </li>
       </ul>
       {isLoggedIn ? (
