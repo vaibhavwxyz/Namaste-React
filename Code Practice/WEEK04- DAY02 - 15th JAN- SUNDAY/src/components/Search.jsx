@@ -5,7 +5,7 @@ const Search = ({ allRestaurant, setFilteredRestaurants }) => {
 
   function handelSearch() {
     const tempData = allRestaurant.filter((data) =>
-      data.strMeal.toLowerCase().includes(search)
+      data.strMeal.toLowerCase().includes(search.toLowerCase())
     );
     return tempData;
   }
