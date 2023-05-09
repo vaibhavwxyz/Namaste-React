@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
-    <div>
-      <h1>Welcome to Contact us Page</h1>
+    <div className="my-10">
+      <h1 className="font-bold text-xl my-2">Welcome to Contact us Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At maxime nihil
         sequi quam. Deleniti, sequi laudantium? Fugiat recusandae explicabo

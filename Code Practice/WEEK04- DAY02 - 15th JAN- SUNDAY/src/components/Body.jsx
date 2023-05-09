@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import Search from "./Search";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -33,7 +34,14 @@ const Body = () => {
       />
       <div className="grid grid-cols-4 gap-5 mb-10">
         {filteredRestaurants.map((restaurant) => {
-          return <Card cardData={restaurant} key={restaurant.idMeal} />;
+          return (
+            <Link
+              to={"restaurant/" + restaurant.idMeal}
+              key={restaurant.idMeal}
+            >
+              <Card cardData={restaurant} />
+            </Link>
+          );
         })}
       </div>
     </>

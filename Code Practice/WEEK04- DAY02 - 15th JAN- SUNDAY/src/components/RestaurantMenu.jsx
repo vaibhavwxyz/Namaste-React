@@ -1,24 +1,34 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
+  const [restaurant, setRestaurant] = useState([]);
+
+  useEffect(() => {
+    getRestaurantInfo();
+  }, []);
+
+  async function getRestaurantInfo() {
+    const data = await fetch(
+      "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
+    );
+    const json = await data.json();
+    setRestaurant(json.meals);
+  }
+
+  console.log(restaurant);
+
   return (
-    <div>
-      <h1>Restorant id: {id}</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-        perferendis, ipsum excepturi sequi odit itaque aperiam a? Labore
-        exercitationem natus itaque obcaecati velit odit quidem iste consectetur
-        maxime! Nam magnam fuga quisquam dolore temporibus? Voluptate iure
-        inventore mollitia molestias tenetur modi quod iste voluptatum atque
-        earum! Facilis illo est aspernatur accusamus, eveniet asperiores
-        quibusdam eligendi mollitia similique molestias tempore aliquid
-        quisquam, blanditiis, quos id minima atque neque laboriosam assumenda
-        adipisci dolorum. Eaque iste porro necessitatibus eveniet enim, impedit
-        eos, voluptas rem voluptatibus illum distinctio vero vitae qui id
-        similique deleniti, explicabo iure doloremque perferendis! Nam facere
-        eligendi necessitatibus aliquid consequatur?
-      </p>
+    <div className="my-10">
+      <h1 className="font-bold font-xl">Restorant id: {id}</h1>
+      <img
+        className="w-48 rounded-md"
+        src={restaurant[0]?.strMealThumb}
+        alt=""
+      />
+      <h1 className="font-bold font-xl">{restaurant[0]?.strMeal}</h1>
+      <h2>{restaurant[0]?.strArea}</h2>
     </div>
   );
 };
