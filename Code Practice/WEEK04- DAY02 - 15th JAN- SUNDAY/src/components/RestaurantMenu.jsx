@@ -17,8 +17,6 @@ const RestaurantMenu = () => {
     setRestaurant(json.meals);
   }
 
-  console.log(restaurant);
-
   return (
     <div className="my-10">
       <h1 className="font-bold font-xl">Restorant id: {id}</h1>

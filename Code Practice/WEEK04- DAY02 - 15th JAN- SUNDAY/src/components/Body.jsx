@@ -10,7 +10,6 @@ const Body = () => {
 
   useEffect(() => {
     getRestaurants();
-    console.log("useEffect");
   }, []);
 
   async function getRestaurants() {
@@ -21,8 +20,6 @@ const Body = () => {
     setAllRestaurants(json?.meals);
     setFilteredRestaurants(json?.meals);
   }
-
-  console.log(allRestaurants);
 
   return allRestaurants.length === 0 ? (
     <Shimmer />
