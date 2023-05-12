@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [allMeals, setAllMeals] = useState([]);
@@ -18,14 +19,15 @@ const Body = () => {
     setAllMeals(json.meals);
     setFilteredMeals(json.meals);
   }
-  // console.log(allMeals);
 
   return (
     <>
       <Search allMeals={allMeals} setFilteredMeals={setFilteredMeals} />
       <div className="grid grid-cols-4 gap-5 my-10">
         {filteredMeals.map((meal) => (
-          <Card filteredMeals={meal} key={meal.idMeal} />
+          <Link to={"detail/" + meal.idMeal} key={meal.idMeal}>
+            <Card filteredMeals={meal} />
+          </Link>
         ))}
       </div>
     </>

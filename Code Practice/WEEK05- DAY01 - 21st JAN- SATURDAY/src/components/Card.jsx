@@ -1,6 +1,5 @@
 const Card = ({ filteredMeals }) => {
   const { strMealThumb, strMeal, strArea } = filteredMeals;
-  console.log(filteredMeals);
   return (
     <div className="p-2 shadow-md rounded-md">
       <img className="rounded-md " src={strMealThumb} alt="img" />

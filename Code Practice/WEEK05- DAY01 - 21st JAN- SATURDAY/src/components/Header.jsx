@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,10 +11,16 @@ const Header = () => {
         Home.chef
       </div>
       <ul className="flex items-center gap-5 font-semibold ">
-        <li className="hover:text-[#ee8512] cursor-pointer">Home</li>
+        <li className="hover:text-[#ee8512] cursor-pointer">
+          <Link to={"/"}>Home</Link>
+        </li>
         <li className="hover:text-[#ee8512] cursor-pointer">Menu</li>
-        <li className="hover:text-[#ee8512] cursor-pointer">About us</li>
-        <li className="hover:text-[#ee8512] cursor-pointer">Contact us</li>
+        <li className="hover:text-[#ee8512] cursor-pointer">
+          <Link to={"/about"}>About us</Link>
+        </li>
+        <li className="hover:text-[#ee8512] cursor-pointer">
+          <Link to={"/contact"}>Contact us</Link>
+        </li>
       </ul>
       <Button />
     </nav>

@@ -23,7 +23,7 @@ const RestaurantMenu = () => {
       <img
         className="w-48 rounded-md"
         src={restaurant[0]?.strMealThumb}
-        alt=""
+        alt="img"
       />
       <h1 className="font-bold font-xl">{restaurant[0]?.strMeal}</h1>
       <h2>{restaurant[0]?.strArea}</h2>
