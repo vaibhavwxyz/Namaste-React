@@ -1,12 +1,10 @@
-import About from "./About";
-import Home from "./Home";
+import GrandParentClass from "./GrandParentClass";
 
 function App() {
   return (
-    <>
-      <Home />
-      <About />
-    </>
+    <div>
+      <GrandParentClass />
+    </div>
   );
 }
 
