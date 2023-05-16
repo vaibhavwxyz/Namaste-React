@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -7,6 +8,9 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Shimmer from "./components/Shimmer";
+
+const Categories = lazy(() => import("./components/Categories"));
 
 const App = () => {
   return (
@@ -27,6 +31,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+      },
+      {
+        path: "/categories",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Categories />
+          </Suspense>
+        ),
       },
       {
         path: "/about",

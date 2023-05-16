@@ -1,21 +1,9 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import getRestaurantInfo from "../utils/GetRestaurantInfo";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [restaurant, setRestaurant] = useState([]);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
-    );
-    const json = await data.json();
-    setRestaurant(json.meals);
-  }
+  const restaurant = getRestaurantInfo(id);
 
   return (
     <div className="my-10">

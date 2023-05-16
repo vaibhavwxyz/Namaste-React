@@ -15,7 +15,7 @@ const Nav = () => {
           <Link to={"/"}>Home</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
-          Menu
+          <Link to={"/categories"}>Categories</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
           <Link to={"/about"}>About us</Link>
