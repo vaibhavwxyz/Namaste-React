@@ -18,6 +18,9 @@ const Nav = () => {
           <Link to={"/categories"}>Categories</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
+          <Link to={"/instamart"}>Instamart</Link>
+        </li>
+        <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
           <Link to={"/about"}>About us</Link>
         </li>
         <li className="md:hover:cursor-pointer md:hover:text-[#F4694C] font-semibold">
