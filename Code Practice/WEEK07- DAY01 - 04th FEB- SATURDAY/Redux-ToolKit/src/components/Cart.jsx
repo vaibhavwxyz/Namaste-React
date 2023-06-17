@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 const Cart = () => {
   return (
     <div className="my-20">

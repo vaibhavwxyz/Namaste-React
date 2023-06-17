@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
 
   return (
     <nav className="flex items-center justify-between py-5">
