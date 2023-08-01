@@ -4,13 +4,10 @@ import Search from "./Search";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
-import UserContext from "../context/userContext";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
-  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -43,16 +40,7 @@ const Body = () => {
         allRestaurant={allRestaurants}
         setFilteredRestaurants={setFilteredRestaurants}
       />
-      <input
-        type="text"
-        className="border-2"
-        value={user.name}
-        onChange={(e) =>
-          setUser({
-            name: e.target.value,
-          })
-        }
-      />
+
       <div className="grid grid-cols-4 gap-5 mb-10">
         {filteredRestaurants.map((restaurant) => {
           return (

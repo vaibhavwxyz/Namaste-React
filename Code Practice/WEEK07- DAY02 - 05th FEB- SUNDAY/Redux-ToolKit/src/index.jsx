@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useContext, useState } from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import InstaMart from "./components/InstaMart";
-import UserContext from "./context/userContext";
 import { Provider } from "react-redux";
 import store from "./context/store";
 import Cart from "./components/Cart";
@@ -18,17 +17,11 @@ import Cart from "./components/Cart";
 const Categories = lazy(() => import("./components/Categories"));
 
 const App = () => {
-  const [user, setUser] = useState({
-    name: "vaibhav shinde",
-    email: "vaibhawxyz@gmail.com",
-  });
   return (
     <Provider store={store}>
-      <UserContext.Provider value={{ user: user, setUser: setUser }}>
-        <Nav />
-        <Outlet />
-        <Footer />
-      </UserContext.Provider>
+      <Nav />
+      <Outlet />
+      <Footer />
     </Provider>
   );
 };
